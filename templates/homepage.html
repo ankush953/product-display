@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    {% for product in products %}
+   
+    <img src="{{ product.image.url }}" alt="{{ product }}">
+   
+
+    {{ product.brand }}  {{ product.name }} <br>
+    {% if product.ratings %}
+        {{ product.ratings }} {{ product.reviews }} {{ product.ratingcount }}
+    {% else %}
+        <small>not rated yet no reviews </small>
+    {% endif %}
+    <br>
+
+    <ul>
+        <li>{{ product.ram }} GB</li>
+        <li>{{ product.rom }} GB</li>
+        <li>{{ product.battery }} Mah</li>
+        <li>{{ product.screen }} inch</li>
+    </ul>
+
+
+
+
+
+
+
+    {{ product.price }}
+
+    <br>
+
+    {% endfor %}
+
+{% endblock %}
