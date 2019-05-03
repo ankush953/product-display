@@ -1,37 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-    {% for product in products %}
-   
-    <img src="{{ product.image.url }}" alt="{{ product }}">
-   
 
-    {{ product.brand }}  {{ product.name }} <br>
-    {% if product.ratings %}
+{% for product in products %}
+
+<div class="row">
+
+
+    <div class="media">
+        <img src="{{ product.image.url }}" class="img-fluid float-left" alt="{{ product }}">
+    </div>
+
+    <div class="col">
+
+        {{ product.brand }} {{ product.name }} <br>
+        {% if product.ratings %}
         {{ product.ratings }} {{ product.reviews }} {{ product.ratingcount }}
-    {% else %}
+        {% else %}
         <small>not rated yet no reviews </small>
-    {% endif %}
+        {% endif %}
+        <br>
+
+        <ul>
+            <li>{{ product.ram }} GB</li>
+            <li>{{ product.rom }} GB</li>
+            <li>{{ product.battery }} Mah</li>
+            <li>{{ product.screen }} inch</li>
+        </ul>
+
+    </div>
+
+
+
+
+
+    <div class="col">
+
+        {{ product.price }}
+    </div>
     <br>
 
-    <ul>
-        <li>{{ product.ram }} GB</li>
-        <li>{{ product.rom }} GB</li>
-        <li>{{ product.battery }} Mah</li>
-        <li>{{ product.screen }} inch</li>
-    </ul>
+</div>
 
-
-
-
-
-
-
-    {{ product.price }}
-
-    <br>
-
-    {% endfor %}
+{% endfor %}
 
 {% endblock %}
