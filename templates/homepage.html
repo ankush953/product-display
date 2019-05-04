@@ -3,40 +3,38 @@
 {% block content %}
 
 {% for product in products %}
-
-<div class="row">
-
-
-    <div class="media">
-        <img src="{{ product.image.url }}" class="img-fluid float-left" alt="{{ product }}">
-    </div>
-
-    <div class="col">
-
-        {{ product.brand }} {{ product.name }} <br>
-        {% if product.ratings %}
-        {{ product.ratings }} {{ product.reviews }} {{ product.ratingcount }}
-        {% else %}
-        <small>not rated yet no reviews </small>
-        {% endif %}
-        <br>
-
-        <ul>
-            <li>{{ product.ram }} GB</li>
-            <li>{{ product.rom }} GB</li>
-            <li>{{ product.battery }} Mah</li>
-            <li>{{ product.screen }} inch</li>
-        </ul>
-
-    </div>
+<div class="container">
+    <div class="row">
 
 
+        <div class="col">
+            <img src="{{ product.image.url }}" class="float-left" alt="{{ product }}" height="200px" width="100px">
+        </div>
+
+        <div class="col">
+
+            {{ product.brand.brandName }} {{ product.name }} <br>
+            {% if product.ratings %}
+            {{ product.ratingsavg }} {{ product.reviewscount }} {{ product.ratingcount }}
+            {% else %}
+            <small>not rated yet no reviews </small>
+            {% endif %}
+            <br>
+
+            <ul>
+                <li>{{ product.ram }} GB</li>
+                <li>{{ product.rom }} GB</li>
+                <li>{{ product.battery }} Mah</li>
+                <li>{{ product.screen }} inch</li>
+            </ul>
+
+        </div>
 
 
+        <div class="col">
 
-    <div class="col">
-
-        {{ product.price }}
+            {{ product.price }}
+        </div>
     </div>
     <br>
 
