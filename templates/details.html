@@ -2,7 +2,6 @@
 
 {% block content %}
 
-{% for product in products %}
 <div class="container">
     <div class="row">
 
@@ -38,8 +37,13 @@
     </div>
     <br>
 
-</div>
+    
+    {% for review in reviews %}
+    <div>
+        {{ review.review }} <hr>
+    </div>
+    {% endfor %}
 
-{% endfor %}
+</div>
 
 {% endblock %}

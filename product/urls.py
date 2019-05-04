@@ -3,5 +3,5 @@ from product import views
 
 urlpatterns = [
     path('',views.homepage,name='homepage'),
-    # path('<str:query>',views.search,name='search'),
+    path('<int:id>',views.detail,name='detail'),
 ]

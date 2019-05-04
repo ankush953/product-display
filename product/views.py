@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # import product model from product app
-from product.models import Product
+from product.models import Product, Review
 
 # to perform queries
 from django.db.models import Q
@@ -27,16 +27,12 @@ def homepage(request):
     return render(request, 'homepage.html', context=showitems)
 
 
-def search(request, query=None):
-    print('Here')
-    products = Product.objects.filter(Q(name__icontains=query) |
-                                      Q(ram__gte=query) |
-                                      Q(rom__gte=rom) |
-                                      Q(brand__brand__icontains=query)
-                                      )
-
-    showitems = {
-        'products': products,
+def detail(request,id):
+    product = Product.objects.filter(id=id).first()
+    reviews = Review.objects.filter(product__id=id)
+    details = {
+        'product':product,
+        'reviews':reviews,
+        'title':product.name,
     }
-
-    return render(request, 'homepage.html', context=showitems)
+    return render(request,'details.html',context=details)
