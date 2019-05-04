@@ -3,7 +3,7 @@ Disclaimer: Products details are not correct. They are dummy objects.
 # product-display
 Using Django, A file showing system is created in which user can see phone details.
 
-<h5> Tasks performed</p>
+<h5> Tasks performed</h5>
 <ul>
 <li>Create a database in sqlite</li>
 <li>Store dummy details of products and show them on the main page</li>
