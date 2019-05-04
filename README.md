@@ -12,3 +12,8 @@ Using Django, A file showing system is created in which user can see phone detai
 <li>User can view ratings, reviews.</li>
 <li>Item status is shown if avaible or few left or out of stock.</li>
 </ul>
+
+<img src='https://i.ibb.co/rvW25bq/Screenshot-from-2019-05-04-17-03-20.png' alter='screenshot'> 
+<img src='https://i.ibb.co/XSxhQtV/SS2.png' alter='avaiable status'>
+<img src='https://i.ibb.co/HDMP9Hz/Seach-Query.png' alter='search query demo'>
+<img src='https://i.ibb.co/wySWQhS/SS1.png' alter='Warning status'>
