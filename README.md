@@ -10,4 +10,5 @@ Using Django, A file showing system is created in which user can see phone detai
 <li>Create a user interface</li>
 <li>Mail the details of the product in which the user is interested</li>
 <li>User can view ratings, reviews.</li>
+<li>Item status is shown if avaible or few left or out of stock.</li>
 </ul>
