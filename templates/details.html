@@ -32,15 +32,20 @@
 
         <div class="col">
 
-            {{ product.price }}
+            {{ product.price }} <br>
+            <form action="{% url 'email' product.id %}" method="POST"> {% csrf_token %}
+                <input type="email" placeholder="me@mail.com" name='email'>
+                <input type="submit" value="Send to Me"></input>
+            </form>
         </div>
     </div>
     <br>
 
-    
+
     {% for review in reviews %}
     <div>
-        {{ review.review }} <hr>
+        {{ review.review }}
+        <hr>
     </div>
     {% endfor %}
 

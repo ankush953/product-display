@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project.urls'
 
-template_dir = os.path.join(BASE_DIR,'templates')
+template_dir = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
@@ -124,3 +124,13 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# setting up to send email to user
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('email')
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

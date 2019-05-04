@@ -28,6 +28,9 @@ class Product(models.Model):
     def __str__(self):
         return self.brand.__str__() + ' ' + self.name
 
+    def fullname(self):
+        return self.brand.brandName+' '+self.name
+
 class Review(models.Model):
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
     rating = models.IntegerField(default=0)
