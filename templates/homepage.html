@@ -14,11 +14,10 @@
         <div class="col">
 
             <a href="{% url 'detail' product.id %}">{{ product.brand.brandName }} {{ product.name }}</a> <br>
-            {% if product.ratings %}
-            {{ product.ratingsavg }} {{ product.reviewscount }} {{ product.ratingcount }}
-            {% else %}
-            <small>not rated yet no reviews </small>
-            {% endif %}
+            
+
+
+
             <br>
 
             <ul>

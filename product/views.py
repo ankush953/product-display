@@ -25,6 +25,7 @@ def homepage(request):
     else:
         # retrieve all objects of Product class
         products = Product.objects.all()
+    products = products.order_by('-id')
 
     showitems = {
         'products': products,
@@ -36,9 +37,18 @@ def homepage(request):
 def detail(request, id):
     product = Product.objects.filter(id=id).first()
     reviews = Review.objects.filter(product__id=id)
+    total_rating = 0
+    for temp in reviews:
+        total_rating += temp.rating
+    # print(total_rating)
+    if total_rating:
+        total_rating /= reviews.count()
+    # print(total_rating)
+
     details = {
         'product': product,
         'reviews': reviews,
+        'rating':total_rating,
         'title': product.name,
     }
     return render(request, 'details.html', context=details)

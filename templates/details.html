@@ -13,8 +13,8 @@
         <div class="col">
 
             <a href="{% url 'detail' product.id %}">{{ product.brand.brandName }} {{ product.name }}</a> <br>
-            {% if product.ratings %}
-            {{ product.ratingsavg }} {{ product.reviewscount }} {{ product.ratingcount }}
+            {% if rating %}
+            {{ rating }}<i class="fa fa-star"></i>
             {% else %}
             <small>not rated yet no reviews </small>
             {% endif %}
